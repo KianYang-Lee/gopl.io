@@ -13,7 +13,9 @@ var pc [256]byte
 func init() {
 	for i := range pc {
 		pc[i] = pc[i/2] + byte(i&1)
+		// fmt.Println(pc[i])
 	}
+
 }
 
 // PopCount returns the population count (number of set bits) of x.
@@ -27,7 +29,3 @@ func PopCount(x uint64) int {
 		pc[byte(x>>(6*8))] +
 		pc[byte(x>>(7*8))])
 }
-
-func main() {}
-
-//!-
